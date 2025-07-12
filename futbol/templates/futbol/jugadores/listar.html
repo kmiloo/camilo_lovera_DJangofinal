@@ -1,0 +1,7 @@
+<h1>Jugadores</h1>
+<a href="{% url 'crear_jugador' %}">Crear</a>
+<ul>
+  {% for jugador in jugadores %}
+    <li>{{ jugador.nombre }} - {{ jugador.posicion }} <img src="{{ jugador.foto.url }}" width="100" /></li>
+  {% endfor %}
+</ul>

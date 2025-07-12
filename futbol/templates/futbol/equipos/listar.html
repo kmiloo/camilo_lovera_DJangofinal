@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Equipos</title>
+</head>
+<body>
+    <h1>Equipos Registrados</h1>
+
+    <a href="{% url 'crear_equipo' %}">Agregar nuevo equipo</a>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Escudo</th>
+                <th>Nombre</th>
+                <th>País</th>
+                <th>Entrenador</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+                <tr>
+                    <td>
+                        {% if equipo.escudo %}
+                            <img src="{{ equipo.escudo.url }}" alt="Escudo de {{ equipo.nombre }}" width="60" height="60">
+                        {% else %}
+                            Sin escudo
+                        {% endif %}
+                    </td>
+                    <td>{{ equipo.nombre }}</td>
+                    <td>{{ equipo.pais.nombre }}</td>
+                    <td>{{ equipo.entrenador }}</td>
+                    <td>
+                        <a href="{% url 'editar_equipo' equipo.id %}">Editar</a> |
+                        <a href="{% url 'eliminar_equipo' equipo.id %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No hay equipos registrados.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

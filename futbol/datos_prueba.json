@@ -1,0 +1,139 @@
+[
+  {
+    "model": "futbol.pais",
+    "pk": 1,
+    "fields": { "nombre": "Chile" }
+  },
+  {
+    "model": "futbol.pais",
+    "pk": 2,
+    "fields": { "nombre": "Argentina" }
+  },
+  {
+    "model": "futbol.pais",
+    "pk": 3,
+    "fields": { "nombre": "Brasil" }
+  },
+  {
+    "model": "futbol.pais",
+    "pk": 4,
+    "fields": { "nombre": "Uruguay" }
+  },
+
+  {
+    "model": "futbol.equipo",
+    "pk": 1,
+    "fields": {
+      "nombre": "Colo Colo",
+      "pais": 1,
+      "entrenador": "Jorge Almirón",
+      "escudo": "escudos/colo_colo.png"
+    }
+  },
+  {
+    "model": "futbol.equipo",
+    "pk": 2,
+    "fields": {
+      "nombre": "Boca Juniors",
+      "pais": 2,
+      "entrenador": "Diego Martínez",
+      "escudo": "escudos/boca_juniors.png"
+    }
+  },
+
+  {
+    "model": "futbol.jugador",
+    "pk": 1,
+    "fields": {
+      "nombre": "Esteban Pavez",
+      "edad": 33,
+      "posicion": "Volante",
+      "pais": 1,
+      "equipo": 1,
+      "foto": "jugadores/pavez.jpg"
+    }
+  },
+  {
+    "model": "futbol.jugador",
+    "pk": 2,
+    "fields": {
+      "nombre": "Brayan Cortés",
+      "edad": 29,
+      "posicion": "Arquero",
+      "pais": 1,
+      "equipo": 1,
+      "foto": "jugadores/cortes.jpg"
+    }
+  },
+  {
+    "model": "futbol.jugador",
+    "pk": 3,
+    "fields": {
+      "nombre": "Edinson Cavani",
+      "edad": 36,
+      "posicion": "Delantero",
+      "pais": 4,
+      "equipo": 2,
+      "foto": "jugadores/cavani.jpg"
+    }
+  },
+  {
+    "model": "futbol.jugador",
+    "pk": 4,
+    "fields": {
+      "nombre": "Valentín Barco",
+      "edad": 20,
+      "posicion": "Lateral Izquierdo",
+      "pais": 2,
+      "equipo": 2,
+      "foto": "jugadores/barco.jpg"
+    }
+  },
+
+  {
+    "model": "futbol.torneo",
+    "pk": 1,
+    "fields": {
+      "nombre": "Campeonato Nacional",
+      "pais": 1
+    }
+  },
+  {
+    "model": "futbol.torneo",
+    "pk": 2,
+    "fields": {
+      "nombre": "Copa Libertadores",
+      "pais": 3
+    }
+  },
+
+  {
+    "model": "futbol.equipotorneo",
+    "pk": 1,
+    "fields": {
+      "equipo": 1,
+      "torneo": 1
+    }
+  },
+  {
+    "model": "futbol.equipotorneo",
+    "pk": 2,
+    "fields": {
+      "equipo": 2,
+      "torneo": 2
+    }
+  },
+
+  {
+    "model": "futbol.partido",
+    "pk": 1,
+    "fields": {
+      "fecha": "2025-07-01",
+      "equipo_local": 1,
+      "equipo_visitante": 2,
+      "torneo": 2,
+      "goles_local": 1,
+      "goles_visitante": 2
+    }
+  }
+]
